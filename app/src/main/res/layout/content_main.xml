@@ -47,30 +47,30 @@
 
         <Button
             android:id="@+id/read_text_button"
-            android:layout_marginTop="@dimen/button_margin_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/button_margin_top"
+            android:background="@color/colorGreen"
             android:text="@string/read_text"
-            android:background="@color/colorAccent"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/copy_text_button"
-            android:layout_marginTop="@dimen/button_margin_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/button_margin_top"
+            android:background="@color/colorGreen"
             android:text="@string/copy_text"
-            android:background="@color/colorAccent"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/mail_text_button"
-            android:layout_marginTop="@dimen/button_margin_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/button_margin_top"
+            android:background="@color/colorGreen"
             android:text="@string/send_email_text"
-            android:background="@color/colorAccent"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white" />
 
     </LinearLayout>
 </ScrollView>
