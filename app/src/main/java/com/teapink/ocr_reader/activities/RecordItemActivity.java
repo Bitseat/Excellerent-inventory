@@ -12,7 +12,7 @@ public class RecordItemActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.activity_record);
 
 //        Button detectButton = (Button) findViewById(R.id.btn_class);
 //        final TextView tv = (TextView) findViewById(R.id.tfRes);
