@@ -57,7 +57,7 @@
         <Button
             android:id="@+id/copy_text_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="31dp"
             android:layout_marginTop="@dimen/button_margin_top"
             android:background="@color/colorGreen"
             android:text="@string/copy_text"

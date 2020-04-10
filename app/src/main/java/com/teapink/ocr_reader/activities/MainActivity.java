@@ -74,23 +74,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        copyButton = (Button) findViewById(R.id.copy_text_button);
-        copyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
-                    android.text.ClipboardManager clipboard =
-                            (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                    clipboard.setText(textValue.getText().toString());
-                } else {
-                    android.content.ClipboardManager clipboard =
-                            (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                    android.content.ClipData clip = android.content.ClipData.newPlainText("Copied Text", textValue.getText().toString());
-                    clipboard.setPrimaryClip(clip);
-                }
-                Toast.makeText(getApplicationContext(), R.string.clipboard_copy_successful_message, Toast.LENGTH_SHORT).show();
-            }
-        });
+//        copyButton = (Button) findViewById(R.id.copy_text_button);
+//        copyButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
+//                    android.text.ClipboardManager clipboard =
+//                            (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+//                    clipboard.setText(textValue.getText().toString());
+//                } else {
+//                    android.content.ClipboardManager clipboard =
+//                            (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+//                    android.content.ClipData clip = android.content.ClipData.newPlainText("Copied Text", textValue.getText().toString());
+//                    clipboard.setPrimaryClip(clip);
+//                }
+//                Toast.makeText(getApplicationContext(), R.string.clipboard_copy_successful_message, Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
 //        mailTextButton = (Button) findViewById(R.id.mail_text_button);
 //        mailTextButton.setOnClickListener(new View.OnClickListener() {
@@ -117,19 +117,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button detectLogoButton = (Button) findViewById(R.id.copy_text_button);
+        detectLogoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDetectLogoActivity();
+            }
+        });
+
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (textValue.getText().toString().isEmpty()) {
-            copyButton.setVisibility(View.GONE);
-            //mailTextButton.setVisibility(View.GONE);
-        } else {
-            copyButton.setVisibility(View.VISIBLE);
-            //mailTextButton.setVisibility(View.VISIBLE);
-        }
-    }
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        if (textValue.getText().toString().isEmpty()) {
+//            //copyButton.setVisibility(View.GONE);
+//            //mailTextButton.setVisibility(View.GONE);
+//        } else {
+//            //copyButton.setVisibility(View.VISIBLE);
+//            //mailTextButton.setVisibility(View.VISIBLE);
+//        }
+//    }
 
     /**
      * Called when an activity you launched exits, giving you the requestCode
@@ -174,6 +182,11 @@ public class MainActivity extends AppCompatActivity {
         else {
             super.onActivityResult(requestCode, resultCode, data);
         }
+    }
+
+    public void openDetectLogoActivity(){
+        Intent intent = new Intent(this, DetectLogo.class);
+        startActivity(intent);
     }
 
     public void addAndEditComputers(final boolean isUpdate, final Computer computer, final int position) {
